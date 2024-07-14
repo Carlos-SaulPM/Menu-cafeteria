@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.contacto {
+  width: 100%;
+  height: 50%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.contacto label,
+.contacto button {
+  font-family: "Nunito";
+}
+
+.contacto input {
+  width: 38%;
+  height: 2.3rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.contacto input[name="Nombre"] {
+  width: 50%;
+}
+
+.contacto div:first-of-type {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contacto textarea {
+  width: 100%;
+  height: 40%;
+  font-size: 1.2rem;
+  font-family: "Nunito";
+  border: none;
+  resize: none;
+}
+button {
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 3rem;
+  width: 7rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  background-color: white;
+  border-width: 1px;
+  border-radius: 0.5rem;
+}

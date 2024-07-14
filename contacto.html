@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contacto.css" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#"
+          ><img src="images/tazaCafe.png" alt="LOGO de la cafeteria"
+        /></a>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Menú</a>
+        <a href="#">Servicios</a>
+        <a href="contacto.html">Contactos</a>
+      </nav>
+    </header>
+    <main>
+      <form class="presentacion contacto">
+        <label for="in-name">Nombre:</label>
+        <input type="text" name="Nombre" id="in-name" />
+        <br />
+        <div>
+          <label for="in-number">Numero:</label>
+          <input type="tel" id="in-number" />
+          <label for="in-email">Correo:</label>
+          <input type="email" name="correo" id="in-email" />
+        </div>
+        <br />
+        <label for="in-mensaje">Mensaje:</label>
+        <textarea type="text" id="in-mensaje" name="Mensaje"></textarea>
+        <button onclick="enviar()" type="button">Enviar</button>
+      </form>
+    </main>
+    <script>
+      function enviar() {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        var nombre = document.getElementById("in-name").value;
+        var numero = document.getElementById("in-number").value;
+        var correo = document.getElementById("in-email").value;
+        var mensaje = document.getElementById("in-mensaje").value;
+
+        const raw = JSON.stringify({
+          mensaje: mensaje,
+          restaurante: "Cafeteria",
+          nombre: nombre,
+          correo: correo,
+          telefono: numero,
+        });
+        console.log(raw);
+        debugger;
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://dd22-2806-107e-10-545e-29bd-f900-8c53-8537.ngrok-free.app/api/mensajes",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => console.log(result))
+          .catch((error) => console.error(error));
+      }
+    </script>
+  </body>
+</html>

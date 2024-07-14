@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(219, 187, 166, 0.5);
+  background: #dbbba680;
   background: linear-gradient(
     90deg,
     rgba(219, 187, 166, 0.8) 0%,
@@ -67,7 +67,8 @@ header {
 main {
   position: relative;
   top: 3rem;
-  width: 80%;
+  width: 65%;
+  max-width: 1000px;
   height: 100%;
 }
 
