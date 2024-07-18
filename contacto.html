@@ -41,12 +41,12 @@
     </main>
     <script>
       function enviar() {
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
         var nombre = document.getElementById("in-name").value;
         var numero = document.getElementById("in-number").value;
         var correo = document.getElementById("in-email").value;
         var mensaje = document.getElementById("in-mensaje").value;
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
         const raw = JSON.stringify({
           mensaje: mensaje,
@@ -55,8 +55,7 @@
           correo: correo,
           telefono: numero,
         });
-        console.log(raw);
-        debugger;
+
         const requestOptions = {
           method: "POST",
           headers: myHeaders,
@@ -64,10 +63,7 @@
           redirect: "follow",
         };
 
-        fetch(
-          "https://dd22-2806-107e-10-545e-29bd-f900-8c53-8537.ngrok-free.app/api/mensajes",
-          requestOptions
-        )
+        fetch("http://127.0.0.1:8000/api/mensajes", requestOptions)
           .then((response) => response.text())
           .then((result) => console.log(result))
           .catch((error) => console.error(error));

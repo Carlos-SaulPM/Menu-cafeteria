@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="cargar()">
+    <div id="mensajes"></div>
+    <script>
+      function cargar() {
+        const requestOptions = {
+          method: "GET",
+          redirect: "follow",
+        };
+
+        fetch(
+          "http://127.0.0.1:8000/api/restaurantes/Cafeteria/mensajes",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+            pintarMensajes(result);
+          })
+          .catch((error) => console.error(error));
+      }
+      //Recibe array para pintar los mensajes
+      function pintarMensajes(array) {
+        var div = document.getElementById("mensajes");
+        array.forEach((element) => {
+          var parrafo = document.createElement("p");
+          parrafo.innerText = element.mensaje;
+          var parrafoDeNombre = document.createElement("p");
+          parrafoDeNombre.innerText = element.nombre;
+
+          console.log(parrafo);
+          div.appendChild(parrafo);
+          div.appendChild(parrafoDeNombre);
+        });
+      }
+    </script>
+  </body>
+</html>
