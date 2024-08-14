@@ -39,34 +39,21 @@
         <button onclick="enviar()" type="button">Enviar</button>
       </form>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       function enviar() {
-        var nombre = document.getElementById("in-name").value;
-        var numero = document.getElementById("in-number").value;
-        var correo = document.getElementById("in-email").value;
-        var mensaje = document.getElementById("in-mensaje").value;
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        const raw = JSON.stringify({
-          mensaje: mensaje,
-          restaurante: "Cafeteria",
-          nombre: nombre,
-          correo: correo,
-          telefono: numero,
-        });
-
-        const requestOptions = {
-          method: "POST",
-          headers: myHeaders,
-          body: raw,
-          redirect: "follow",
-        };
-
-        fetch("http://127.0.0.1:8000/api/mensajes", requestOptions)
-          .then((response) => response.text())
-          .then((result) => console.log(result))
-          .catch((error) => console.error(error));
+        // Obtener los valores dentro de la función enviar
+        let nombre = document.getElementById("in-name").value;
+        let numero = document.getElementById("in-number").value;
+        let correo = document.getElementById("in-email").value;
+        let mensaje = document.getElementById("in-mensaje").value;
+        enviarMensajes(nombre, numero, correo, mensaje);
+        Swal.fire("¡Su mensaje fue enviado!");
+        // Limpia los campos despues del mensaje
+        document.getElementById("in-name").value = "";
+        document.getElementById("in-number").value = "";
+        document.getElementById("in-email").value = "";
+        document.getElementById("in-mensaje").value = "";
       }
     </script>
   </body>

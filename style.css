@@ -151,7 +151,6 @@ h1 {
   margin-top: 20px;
   width: 80%;
   height: 400px;
-  padding: 3rem;
   background-color: #f8e9df;
   border-radius: 20px;
   display: flex;
@@ -172,7 +171,6 @@ h1 {
 }
 
 .interior-presentacion h2 {
-  margin-top: 1rem;
   text-align: center;
   font-family: "Nunito";
   font-size: 1.6rem;
@@ -188,7 +186,7 @@ h1 {
 .interior-presentacion p {
   font-size: 1.4rem;
   text-align: left;
-  padding: 0 2rem;
+
   font-family: "Nunito";
 }
 .image {
@@ -206,7 +204,7 @@ h1 {
 }
 
 .platillo div:first-child {
-  padding: 2rem;
+  padding: 1.8rem;
   padding-top: 3rem;
   padding-right: 0;
   justify-content: flex-start;
@@ -218,13 +216,13 @@ h1 {
 
 #img-platillo1 {
   background-image: url(images/platillo1-capuchino.jpg);
-  background-position: -3rem 0rem;
+  background-position: -6rem 0rem;
 }
 #img-platillo2 {
   background-image: url(images/platillo3-americano.jpg);
-  background-position: -3rem 0rem;
+  background-position: -6rem 0rem;
 }
 #img-platillo3 {
   background-image: url(images/platillo2-espresso.jpg);
-  background-position: -3rem 0rem;
+  background-position: -6rem 0rem;
 }

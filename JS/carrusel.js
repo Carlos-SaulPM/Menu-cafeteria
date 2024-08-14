@@ -5,15 +5,12 @@ const btnLeft = document.getElementsByClassName("btn-left")[0],
 
 btnLeft.addEventListener("click", (e) => moverIzquierda());
 btnRight.addEventListener("click", (e) => moverDerecha());
-setInterval(() => {
-  moverDerecha();
-}, 3000);
 
 let aux = 0,
   contador = 0,
   widthImg = 100 / sliderSection.length;
 
-function moverDerecha() {
+export default function moverDerecha() {
   if (contador >= sliderSection.length - 1) {
     aux = 0;
     contador = 0;

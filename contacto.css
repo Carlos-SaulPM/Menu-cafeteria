@@ -21,13 +21,14 @@
 .contacto input {
   width: 38%;
   height: 2.3rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border-radius: 0.3rem;
   border: none;
 }
 
 .contacto input[name="Nombre"] {
-  width: 50%;
+  width: 60%;
+  height: 3rem;
 }
 
 .contacto div:first-of-type {
